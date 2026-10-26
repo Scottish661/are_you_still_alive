@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script async src="https://googletagmanager.com"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Q54QNH51GX');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>try not to die</title>
-    <link rel="stylesheet" href="PlatForm.css">
-</head>
+<html>
 <body>
+    <h1 id="mainHeading"></h1>
     <script>
-        
-             
+        // Replace this link with your live Wasmer Edge backend URL
+const backendUrl = 'https://backend-scottish661.wasmer.app';
+        const mainHeading = document.getElementById('mainHeading');
+        fetch(backendUrl)
+            .then(function (response) { return response.text(); })
+            .then(function (text) { mainHeading.innerText = text; });
     </script>
 </body>
 </html>
