@@ -1,4 +1,4 @@
-fetch("https://backend-scottish661.wasmer.app")
+fetch("https://scottish661-flask-starter.wasmer.app")
 .then(response => response.text())
 .then(data => {
     document.body.innerHTML = `${data}`});
