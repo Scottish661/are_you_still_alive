@@ -1,26 +1,22 @@
-document.get.body.innerhtml`
-   <!DOCTYPE html>
-<html>
-<body>
-    <style>
-   button {
-    height: 100px;
-    width: 1000px;
-  }
-    </style>
-   <h1 id="count"> </h1>
-<button onclick="add()"> 
-    incress the amount 
-    </button> 
-</body>
-</html>
-`
-function add(){
-fetch("https://scottish661-flask-starter.wasmer.app/add",{
-    method: "POST"
+
+document.body.innerHTML = `
+    <h1 id="count">0</h1>
+    <button id="add">Increase the amount</button>
+`;
+
+const button = document.getElementById("add");
+
+button.addEventListener("click", add);
+
+function add() {
+    fetch("https://scottish661-flask-starter.wasmer.app/add", {
+        method: "POST"
     })
-.then( info => info.json())
-.then ( info => {
-document.getElementById("count").textContent = info.count
-})
+    .then(response => response.json())
+    .then(info => {
+        document.getElementById("count").textContent = info.count;
+    })
+    .catch(error => {
+        console.error("Something went wrong:", error);
+    });
 }
