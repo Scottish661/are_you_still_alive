@@ -1,10 +1,9 @@
 function add(){
-fetch("https://scottish661-flask-starter.wasmer.app/add"){
+fetch("https://scottish661-flask-starter.wasmer.app/app",{
 method: "POST"
-}
-.then(count >= count.json()
-.then(count >= {
-    document.getElementById("count").textContent = count
-    }
-}
+})
+.then(data => data.json())
+.then(data => {
+    document.getElementById("count").textContent = data.count
+    })
 }
